@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const formCheckboxes = document.querySelectorAll('.div-add-on > input');
-
+  
   for (let i = 0; i < formCheckboxes.length; i++) {
     const formCheckbox = formCheckboxes[i];
 

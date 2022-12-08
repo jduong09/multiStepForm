@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const spanPlanYearlyDiscounts = document.getElementsByClassName('span-plan-discount');
   const itemListPlans = document.getElementsByClassName('item-list-plan');
 
+  const divOnlineServicePrice = document.getElementById('div-online-service-price');
+  const divLargerStoragePrice = document.getElementById('div-larger-storage-price');
+  const divCustomizeProfilePrice = document.getElementById('div-customize-profile-price');
   let prevSelectedPlan = '';
   btnToggle.addEventListener('click', (e) => {
     e.preventDefault();
@@ -22,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
       spanAdvancedPrice.innerHTML = '$120/yr';
       spanProPrice.innerHTML = '$150/yr';
 
+      divOnlineServicePrice.innerHTML = '+$10/yr';
+      divLargerStoragePrice.innerHTML = '+$20/yr';
+      divCustomizeProfilePrice.innerHTML = '+$20/yr';
+
       for (let i = 0; i < spanPlanYearlyDiscounts.length; i++) {
         spanPlanYearlyDiscounts[i].classList.remove('hide');
       }
@@ -34,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
       spanArcadePrice.innerHTML = '$9/mo';
       spanAdvancedPrice.innerHTML = '$12/mo';
       spanProPrice.innerHTML = '$15/mo';
+
+      divOnlineServicePrice.innerHTML = '+$1/mo';
+      divLargerStoragePrice.innerHTML = '+$2/mo';
+      divCustomizeProfilePrice.innerHTML = '+$2/mo';
 
       for (let i = 0; i < spanPlanYearlyDiscounts.length; i++) {
         spanPlanYearlyDiscounts[i].classList.add('hide');

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formFour = document.getElementById('form-4');
   const btnFooterBack = document.getElementById('btn-footer-back');
   const btnFooterNext = document.getElementById('btn-footer-next');
-  let currentFormStep = 2;
+  let currentFormStep = 0;
 
   btnFooterNext.addEventListener('click', (e) => {
     e.preventDefault();

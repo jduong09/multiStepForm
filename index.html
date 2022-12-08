@@ -10,6 +10,7 @@
   <script type="text/javascript" src="./js/form.js"></script>
   <script type="text/javascript" src="./js/formTwo.js"></script>
   <script type="text/javascript" src="./js/formThree.js"></script>
+  <script type="text/javascript" src="./js/formFour.js"></script>
   <title>Frontend Mentor | Multi-step form</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
     <div class="div-sidebar-steps">
       <ul class="list-steps">
         <li class="item-list-step">
-          <span>1</span>
+          <span class="active">1</span>
           <div class="div-step-description hide">
             <h3>Step 1</h3>
             <div>Your Info</div>
@@ -31,7 +32,7 @@
           </div>
         </li>
         <li class="item-list-step">
-          <span class="active">3</span>
+          <span>3</span>
           <div class="div-step-description hide">
             <h3>Step 3</h3>
             <div>Add-Ons</div>
@@ -47,7 +48,7 @@
       </ul>
     </div>
     <div class="div-form">
-      <div id="form-1" class="div-form-step hide">
+      <div id="form-1" class="div-form-step">
         <h2>Personal info</h2>
         <div>Please provide your name, email address, and phone number.</div>
         <form id="form-personal-info">
@@ -102,7 +103,7 @@
           <span id="toggle-yearly">Yearly</span>
         </div>
       </div>
-      <div id="form-3" class="div-form-step">
+      <div id="form-3" class="div-form-step hide">
         <h2>Pick add-ons</h2>
         <div>Add-ons help enhance your gaming experience.</div>
         <form id="form-add-ons">
@@ -112,7 +113,7 @@
               <h4>Online Service</h4>
               <div>Access to multiplayer games</div>
             </div>
-            <div>+$1/mo</div>
+            <div id="div-online-service-price">+$1/mo</div>
           </div>
           <div class="div-add-on">
             <input id="input-larger-storage" type="checkbox"/>
@@ -120,7 +121,7 @@
               <h4>Larger storage</h4>
               <div>Extra 1TB of cloud save</div>
             </div>
-            <div>+$2/mo</div>
+            <div id="div-larger-storage-price">+$2/mo</div>
           </div>
           <div class="div-add-on">
             <input id="input-customizable-profile" type="checkbox"/>
@@ -128,7 +129,7 @@
               <h4>Customizable Profile</h4>
               <div>Custom theme on your profile</div>
             </div>
-            <div>+$2/mo</div>
+            <div id="div-customize-profile-price">+$2/mo</div>
           </div>
         </form>
       </div>

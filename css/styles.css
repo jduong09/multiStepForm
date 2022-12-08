@@ -304,6 +304,31 @@ input[type="checkbox"]:checked {
   font-size: 13px;
 }
 
+/* Form 4 */
+.div-checkout {
+  padding: .825rem;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.div-checkout > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .825rem;
+}
+
+.div-checkout > div:first-of-type {
+  border-bottom: 1px solid hsl(231, 11%, 63%);
+  padding-bottom: .825rem;
+}
+
+.checkout-plan-name, .checkout-plan-price {
+  color: hsl(213, 96%, 18%);
+  font-family: "Ubuntu-Medium";
+}
+
 
 
 
