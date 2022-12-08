@@ -146,6 +146,11 @@ h2 {
   border-radius: 4px;
 }
 
+.item-list-plan.selected {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsla(243, 100%, 62%, .05);
+}
+
 .item-list-plan:hover {
   border-color: hsl(243, 100%, 62%);
 }
@@ -257,6 +262,10 @@ footer > button {
 
 #btn-footer-back {
   margin: 0 auto 0 0;
+}
+
+#btn-footer-back:hover {
+  color: hsl(213, 96%, 18%);
 }
 
 #btn-footer-next {

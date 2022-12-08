@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formFour = document.getElementById('form-4');
   const btnFooterBack = document.getElementById('btn-footer-back');
   const btnFooterNext = document.getElementById('btn-footer-next');
-  let currentFormStep = 0;
+  let currentFormStep = 2;
 
   btnFooterNext.addEventListener('click', (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (currentFormStep === 3) {
       return;
     }
-    
+
     listStepsItems[currentFormStep].children[0].classList.remove('active');
     listStepsItems[currentFormStep + 1].children[0].classList.add('active');
 
