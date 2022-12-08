@@ -79,17 +79,17 @@ h2 {
 
 /* Div: div-form */
 .div-form {
-  width: 90%;
+  width: 92%;
   position: absolute;
   top: 98px;
-  left: 5%;
+  left: 4%;
   background-color: hsl(0, 0%, 100%);
   border-radius: 8px;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
 .div-form-step {
-  padding: 1.75rem 1.5rem;
+  padding: 1.75rem 1.25rem;
 }
 
 .div-form-step > div:first-of-type {
@@ -236,6 +236,75 @@ h2 {
   left: initial;
   right: 4px;
 }
+
+/* Form 3 */
+.div-add-on {
+  display: flex;
+  align-items: center;
+  padding: .825rem;
+  margin-bottom: .825rem;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 8px;
+}
+
+.div-add-on.selected {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsla(243, 100%, 62%, .05);
+}
+
+input[type="checkbox"] {
+  margin-right: .825rem;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  appearance: none;
+  border: 1px solid hsl(231, 11%, 63%);
+  position: relative;
+}
+
+input[type="checkbox"]:checked::before {	
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: hsl(0, 0%, 100%);
+}
+
+input[type="checkbox"]:checked {
+  background-color: hsl(243, 100%, 62%);
+  border-color: hsl(243, 100%, 62%);
+}
+
+
+.div-add-on > div:first-of-type {
+  margin-right: 1rem;
+}
+
+.div-add-on > div:first-of-type > h4 {
+  color: hsl(213, 96%, 18%);
+  font-family: "Ubuntu-Medium";
+  margin-bottom: .2125rem;
+  font-size: 14px;
+}
+
+.div-add-on > div:first-of-type > div {
+  font-size: 13px;
+}
+
+.div-add-on > div:last-of-type {
+  color: hsl(243, 100%, 62%);
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 13px;
+}
+
+
 
 
 
