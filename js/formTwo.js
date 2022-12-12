@@ -67,3 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+const sendFormTwo = () => {
+  const itemListPlans = document.getElementsByClassName('item-list-plan');
+  const toggleMonthly = document.getElementById('toggle-monthly');
+
+  for (let i = 0; i < itemListPlans.length; i++) {
+    if (itemListPlans[i].classList.contains('selected')) {
+      return {
+        name: itemListPlans[i].children[1].children[0].innerHTML,
+        price: itemListPlans[i].children[1].children[1].getAttribute('data-price'),
+        duration: toggleMonthly.classList.contains('selected') ? 'Monthly' : 'Yearly'
+      };
+    }
+  }
+};

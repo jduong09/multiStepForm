@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let plan;
   let price;
   let duration;
+
+  /*
+
   btnFooterNext.addEventListener('click', () => {
     if (!divFormFour.classList.contains('hide')) {
       let total = 0;
@@ -72,14 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(checkoutAddOnName.innerHTML);
           console.log(checkoutAddOnPrice.innerHTML);
           
-          /*
+          
           if (duration === 'Monthly') {
             total += parseInt(checkoutAddOnPrice.innerText.substr(1, 1));
           } else {
             total += parseInt(checkoutAddOnPrice.innerText.substr(1, 2));
           }
 
-          */
+          
 
           checkoutAddOn.append(checkoutAddOnName, checkoutAddOnPrice);
           
@@ -109,4 +112,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  */
+
 });
+
+const showCheckout = (formTwoData, formThreeData) => {
+  const divFormFour = document.getElementById('form-4');
+  const divCheckout = document.querySelector('.div-checkout');
+  const divCheckoutPlanName = document.querySelector('.checkout-plan-name');
+  const divCheckoutPlanPrice = document.querySelector('.checkout-plan-price');  
+  const divTotalHeader = document.querySelector('.div-total-header');
+  const divTotalAmount = document.querySelector('.div-total-amount');
+  let total = 0;
+
+  const checkoutPlan = document.createElement('div');
+  const checkoutPlanNameDiv = document.createElement('div');
+  divCheckoutPlanName.innerHTML = `${formTwoData.name} (${formTwoData.duration})`;
+
+  divCheckoutPlanPrice.innerHTML = formTwoData.duration === 'Monthly' ? `$${formTwoData.price}/mo` : `$${parseInt(formTwoData.price * 10)}/yr`;
+
+  if (formTwoData.duration === 'Monthly') {
+    total += parseInt(formTwoData.price);
+  } else {
+    total += (parseInt(formTwoData.price) * 10);
+  }
+
+  console.log(total);
+  
+  for (const index in formThreeData) {
+    const plan = formThreeData[index];
+    const planName = plan.name;
+    const planPrice = plan.price;
+    console.log(planName, planPrice);
+
+    const checkoutAddOn = document.createElement('div');
+    checkoutAddOn.classList.add('checkout-add-on');
+    const checkoutAddOnName = document.createElement('div');
+    const checkoutAddOnPrice = document.createElement('div');
+    checkoutAddOnName.innerHTML = plan.name;
+
+    if (formTwoData.duration === 'Monthly') {
+      checkoutAddOnPrice.innerHTML = `+$${plan.price}/mo`;
+      total += parseInt(plan.price);
+    } else {
+      checkoutAddOnPrice.innerHTML = `+$${parseInt(plan.price) * 10}/yr`;
+      total += (parseInt(plan.price) * 10);
+    }
+
+    checkoutAddOn.append(checkoutAddOnName, checkoutAddOnPrice);
+      
+    divCheckout.appendChild(checkoutAddOn);
+  }
+
+  console.log(total);
+  
+  if (formTwoData.duration === 'Monthly') {
+    divTotalHeader.innerHTML = 'Total (per month)';
+  } else {
+    divTotalHeader.innerHTML = 'Total (per year)';
+  }
+
+  divTotalAmount.innerHTML = total;
+};

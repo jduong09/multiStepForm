@@ -98,38 +98,67 @@ h2 {
   line-height: 1.5rem;
 }
 
-#form-personal-info > label {
+#form-personal-info > label, .div-input > label {
   display: block;
-  margin-bottom: .85rem;
+  flex: 2 50%;
   font-size: 15px;
   color: hsl(213, 96%, 18%);
 }
 
-#form-personal-info > label:last-of-type {
+.div-input {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: .85rem;
+}
+
+.div-input:last-of-type {
   margin-bottom: 0;
 }
 
-#form-personal-info > label > input {
+.div-input > span {
+  flex: 2 50%;
+  font-family: "Ubuntu-Bold", sans-serif;
+  font-size: 13px;
+  text-align: end;
+  color: hsl(354, 84%, 57%);
+}
+
+.div-input > input {
   display: block;
   width: 100%;
+  flex: 1 100%;
   margin-top: .25rem;
   padding: .5rem 1rem;
   border: 1px solid hsl(231, 11%, 63%);
   border-radius: 4px;
+  color: hsl(213, 96%, 18%);
+  font-size: 15px;
 }
 
-#form-personal-info > label > input::placeholder {
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: hsl(213, 96%, 18%);
+}
+
+.div-input > input.error {
+  border-color: hsl(354, 84%, 57%);
+}
+
+.div-input > input::placeholder {
   font-size: 15px;
   font-family: "Ubuntu-Medium";
   color: hsl(231, 11%, 63%);
 }
 
-#form-personal-info > label > input:focus {
+.div-input > input:focus {
   background-color: hsl(0, 0%, 100%);
   outline-color: hsl(243, 100%, 62%);
 }
 
-#form-personal-info > label > input.error {
+.div-input > input.error {
   border-color: hsl(354, 84%, 57%);
 }
 

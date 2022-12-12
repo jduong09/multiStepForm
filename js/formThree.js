@@ -13,3 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+const sendFormThree = () => {
+  const formCheckboxes = document.querySelectorAll('.div-add-on > input');
+  let formObj = {};
+
+  for (let i = 0; i < formCheckboxes.length; i++) {
+    if (formCheckboxes[i].checked) {
+      formObj[i] = {
+        name: formCheckboxes[i].getAttribute('data-name'),
+        price: formCheckboxes[i].parentElement.children[2].getAttribute('data-price')
+      }
+    }
+  }
+
+  return formObj;
+};
