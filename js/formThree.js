@@ -1,14 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const formCheckboxes = document.querySelectorAll('.div-add-on > input');
+  const divAddOns = document.getElementsByClassName('div-add-on');
   
-  for (let i = 0; i < formCheckboxes.length; i++) {
-    const formCheckbox = formCheckboxes[i];
+  for (let i = 0; i < divAddOns.length; i++) {
+    const divAddOn = divAddOns[i];
 
-    formCheckbox.addEventListener('click', (e) => {
-      if (formCheckbox.checked) {
-        e.target.parentElement.classList.add('selected');
+    divAddOn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (divAddOn.classList.contains('selected')) {
+        divAddOn.classList.remove('selected');
+        divAddOn.children[0].checked = false;
       } else {
-        e.target.parentElement.classList.remove('selected');
+        divAddOn.classList.add('selected');
+        divAddOn.children[0].checked = true;
       }
     });
   }

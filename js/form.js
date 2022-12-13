@@ -8,18 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const footer = document.querySelector('footer');
   const btnFooterBack = document.getElementById('btn-footer-back');
   const btnFooterNext = document.getElementById('btn-footer-next');
-  const btnChangePlan = document.querySelector('.div-checkout > div > div > button');
-  let currentFormStep = 1;
+  const btnChangePlan = document.getElementById('btn-change-plan');
+  let currentFormStep = 0;
   let formTwoData, formThreeData;
 
   btnChangePlan.addEventListener('click', (e) => {
     e.preventDefault();
     const itemListSteps = document.getElementsByClassName('item-list-step');
-    const checkoutAddOns = document.getElementsByClassName('checkout-add-on');
 
-    for (let i = 0; i < checkoutAddOns.length; i++) {
-      checkoutAddOns[i].remove();
-    }
+    resetAddOns();
 
     formFour.classList.add('hide');
     itemListSteps[3].children[0].classList.remove('active');
@@ -56,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer.classList.add('hide');
       return;
     }
-    
+
     listStepsItems[currentFormStep].children[0].classList.remove('active');
     listStepsItems[currentFormStep + 1].children[0].classList.add('active');
 
