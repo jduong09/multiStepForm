@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const divAddOns = document.getElementsByClassName('div-add-on');
-  
+    
   for (let i = 0; i < divAddOns.length; i++) {
     const divAddOn = divAddOns[i];
 

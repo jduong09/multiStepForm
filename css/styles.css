@@ -436,3 +436,107 @@ footer > button {
 #btn-footer-next:hover {
   opacity: .85;
 }
+
+@media (min-width: 576px) {
+  .list-steps {
+    width: 30%;
+  }
+
+  .div-form {
+    width: 80%;
+    left: 10%;
+  }
+
+  footer {
+    padding: 5% 10%;
+  }
+}
+
+@media (min-width: 767px) {
+  .list-steps {
+    width: 22.5%;
+  }
+
+  .div-form {
+    width: 70%;
+    left: 15%;
+  }
+
+  footer {
+    padding: 5% 15%; 
+  }
+}
+
+@media (min-width: 922px) {
+  .list-steps {
+    width: 18.5%;
+  }
+
+  .div-form {
+    width: 60%;
+    left: 20%;
+  }
+
+  footer {
+    padding: 5% 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  main {
+    width: 70%;
+    padding: .5rem;
+    margin: 5rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  .div-sidebar-steps {
+    width: 20%;
+    height: auto;
+    margin: 0 auto 0 0;
+    background-image: url('../assets/images/bg-sidebar-desktop.svg');
+    border-radius: 10px;
+  }
+
+  .list-steps {
+    width: auto;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 1.75rem 1rem;
+    margin: 0;
+  }
+
+  .item-list-step {
+    display: flex;
+    margin-bottom: 1.75rem;
+  }
+
+  .item-list-step > span {
+    width: 28px;
+    height: 28px;
+    margin-right: .825rem;
+  }
+
+  .div-step-description {
+    display: block !important;
+  }
+
+  .div-form {
+    width: 80%;
+    margin: 0 auto;
+    position: initial;
+    left: initial;
+    top: initial;
+    background-color: inherit;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 1400px) {
+
+}
