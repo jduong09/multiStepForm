@@ -358,6 +358,38 @@ input[type="checkbox"]:checked {
   font-family: "Ubuntu-Medium";
 }
 
+.div-checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .825rem .825rem 0 .825rem;
+  font-size: 14px;
+}
+
+.div-total-amount {
+  color: hsl(243, 100%, 62%);
+}
+
+.div-form-thank-you {
+  padding: 4.9rem .825rem;
+  text-align: center;
+}
+
+#img-thank-you {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto 1.75rem auto;
+}
+
+.div-form-thank-you > div {
+  width: 95%;
+  margin: 0 auto;
+  line-height: 1.5rem;
+}
+
+
+
 
 
 

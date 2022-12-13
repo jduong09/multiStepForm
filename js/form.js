@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const formTwo = document.getElementById('form-2');
   const formThree = document.getElementById('form-3');
   const formFour = document.getElementById('form-4');
+  const divThankYou = document.querySelector('.div-form-thank-you');
+  const footer = document.querySelector('footer');
   const btnFooterBack = document.getElementById('btn-footer-back');
   const btnFooterNext = document.getElementById('btn-footer-next');
   const btnChangePlan = document.querySelector('.div-checkout > div > div > button');
@@ -39,19 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
       }
     } else if (currentFormStep === 1) {
-      console.log('hey');
       formTwoData = sendFormTwo();
       formTwo.classList.add('hide');
       formThree.classList.remove('hide');
     } else if (currentFormStep === 2) {
       formThreeData = sendFormThree();
       showCheckout(formTwoData, formThreeData);
+      btnFooterNext.innerHTML = 'Complete';
       formThree.classList.add('hide');
       formFour.classList.remove('hide');
     } else if (currentFormStep === 3) {
-      return false;
+      formFour.classList.add('hide');
+      divThankYou.classList.remove('hide');
+      footer.classList.add('hide');
+      return;
     }
-
+    
     listStepsItems[currentFormStep].children[0].classList.remove('active');
     listStepsItems[currentFormStep + 1].children[0].classList.add('active');
 
@@ -60,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnFooterBack.addEventListener('click', (e) => {
     e.preventDefault();
+
+    resetAddOns();
 
     if (currentFormStep === 0) {
       return;
@@ -71,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
       formThree.classList.add('hide');
       formTwo.classList.remove('hide');
     } else if (currentFormStep === 3) {
+      btnFooterNext.innerHTML = 'Next Step';
       formFour.classList.add('hide');
       formThree.classList.remove('hide');
     }

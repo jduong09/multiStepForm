@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   btnToggle.addEventListener('click', (e) => {
     e.preventDefault();
 
+    resetAddOns();
+
     if (toggleMonthly.classList.contains('selected')) {
       toggleMonthly.classList.remove('selected');
       toggleYearly.classList.add('selected');

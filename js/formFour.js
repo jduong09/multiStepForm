@@ -125,8 +125,6 @@ const showCheckout = (formTwoData, formThreeData) => {
   const divTotalAmount = document.querySelector('.div-total-amount');
   let total = 0;
 
-  const checkoutPlan = document.createElement('div');
-  const checkoutPlanNameDiv = document.createElement('div');
   divCheckoutPlanName.innerHTML = `${formTwoData.name} (${formTwoData.duration})`;
 
   divCheckoutPlanPrice.innerHTML = formTwoData.duration === 'Monthly' ? `$${formTwoData.price}/mo` : `$${parseInt(formTwoData.price * 10)}/yr`;
@@ -136,15 +134,10 @@ const showCheckout = (formTwoData, formThreeData) => {
   } else {
     total += (parseInt(formTwoData.price) * 10);
   }
-
-  console.log(total);
   
   for (const index in formThreeData) {
     const plan = formThreeData[index];
-    const planName = plan.name;
-    const planPrice = plan.price;
-    console.log(planName, planPrice);
-
+    
     const checkoutAddOn = document.createElement('div');
     checkoutAddOn.classList.add('checkout-add-on');
     const checkoutAddOnName = document.createElement('div');
@@ -163,14 +156,21 @@ const showCheckout = (formTwoData, formThreeData) => {
       
     divCheckout.appendChild(checkoutAddOn);
   }
-
-  console.log(total);
   
   if (formTwoData.duration === 'Monthly') {
     divTotalHeader.innerHTML = 'Total (per month)';
+    divTotalAmount.innerHTML = `$${total}/mo`;
   } else {
     divTotalHeader.innerHTML = 'Total (per year)';
+    divTotalAmount.innerHTML = `$${total}/yr`;
   }
+};
 
-  divTotalAmount.innerHTML = total;
+const resetAddOns = () => {
+  const divCheckoutAddOns = document.getElementsByClassName('checkout-add-on');
+  const copyDivCheckout = Array.from(divCheckoutAddOns);
+
+  for (let i = 0; i < copyDivCheckout.length; i++) {
+    copyDivCheckout[i].remove();
+  }
 };
