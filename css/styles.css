@@ -490,6 +490,7 @@ footer > button {
     display: flex;
     justify-content: center;
     background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -497,7 +498,7 @@ footer > button {
   }
 
   .div-sidebar-steps {
-    width: 25%;
+    width: 27.5%;
     height: auto;
     margin: 0 auto 0 0;
     background-image: url('../assets/images/bg-sidebar-desktop.svg');
@@ -510,7 +511,7 @@ footer > button {
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    padding: 1.75rem 1rem;
+    padding: 1.75rem 1.25rem;
     margin: 0;
   }
 
@@ -544,7 +545,7 @@ footer > button {
   }
 
   .div-form {
-    width: 65%;
+    width: 58%;
     margin: 0 auto;
     position: initial;
     left: initial;
@@ -554,13 +555,72 @@ footer > button {
     box-shadow: none;
   }
 
+  h2 {
+    font-size: 2rem;
+  }
+
+  .div-form-step > div:first-of-type {
+    margin-bottom: 1.75rem;
+    width: 100%;
+  }
+
+  .div-input {
+    margin-bottom: 1.25rem;
+  }
+
+  .div-input > input {
+    padding: .75rem;
+  }
+
+  .div-input > input::placeholder {
+    font-size: 1rem;
+  }
+
   .div-nav-buttons {
-    padding: 1.75rem 1.25rem;
+    padding: 1.75rem 1.25rem .85rem 1.25rem;
     display: flex;
     justify-content: space-between;
+  }
+
+  #list-plans {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .item-list-plan {
+    display: block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    flex: 3;
+  }
+
+  .item-list-plan > img {
+    width: 32px;
+    height: 32px;
+    margin-right: 0;
+    margin-bottom: 1.75rem;
+  }
+
+  .item-list-plan:last-of-type {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .item-list-plan > div > span:first-of-type {
+    margin-bottom: 0;
   }
 }
 
 @media (min-width: 1400px) {
+  main {
+    width: 65%;
+  }
 
+  .div-sidebar-steps {
+    width: 25%;
+  }
+
+  .div-form {
+    width: 55%;
+  }
 }
