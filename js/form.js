@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formThree = document.getElementById('form-3');
   const formFour = document.getElementById('form-4');
   const divThankYou = document.querySelector('.div-form-thank-you');
-  const footer = document.querySelector('footer');
+  const divNavBtns = document.querySelector('.div-nav-buttons');
   const btnFooterBack = document.getElementById('btn-footer-back');
   const btnFooterNext = document.getElementById('btn-footer-next');
   const btnChangePlan = document.getElementById('btn-change-plan');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (currentFormStep === 3) {
       formFour.classList.add('hide');
       divThankYou.classList.remove('hide');
-      footer.classList.add('hide');
+      divNavBtns.classList.add('hide');
       return;
     }
 
