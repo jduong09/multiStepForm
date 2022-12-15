@@ -84,4 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
     listStepsItems[currentFormStep - 1].children[0].classList.add('active');
     currentFormStep -= 1;
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1200) {
+
+    } else {
+      
+    }
+  });
 });
